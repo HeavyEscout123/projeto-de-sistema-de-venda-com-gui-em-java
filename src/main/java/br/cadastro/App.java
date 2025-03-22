@@ -1,3 +1,9 @@
+package br.cadastro;
+
+
+import br.cadastro.bancoD.CadClientes;
+import br.cadastro.dados.Cliente;
+import br.cadastro.dados.Pessoa;
 
 import java.util.*;
 import javax.swing.JOptionPane;
@@ -39,6 +45,7 @@ public class App {
                     }
                     break;
                 case 2:
+                    CadClientes.carregar ();
                     JOptionPane.showMessageDialog(null, CadClientes.cadastro());
                     break;
                 case 3:
@@ -48,5 +55,3 @@ public class App {
         }
     }
 }
-
-

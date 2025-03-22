@@ -1,8 +1,12 @@
+package br.cadastro.bancoD;
+
+import br.cadastro.dados.Produto;
+
 public class itemVenda {
     private int quantidade;
     private Produto prod;
 
-    public itemVenda(int quant,Produto prod){
+    public itemVenda(int quant, Produto prod){
         this.quantidade = quant;
         this.prod = prod;
     }

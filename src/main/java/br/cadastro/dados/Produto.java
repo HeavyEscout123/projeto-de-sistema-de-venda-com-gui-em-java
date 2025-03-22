@@ -1,3 +1,5 @@
+package br.cadastro.dados;
+
 public class Produto {
     private final int codigo;
     private String nome;

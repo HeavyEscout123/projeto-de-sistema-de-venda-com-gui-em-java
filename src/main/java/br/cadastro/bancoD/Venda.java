@@ -1,3 +1,8 @@
+package br.cadastro.bancoD;
+
+import br.cadastro.dados.Cliente;
+import br.cadastro.dados.Produto;
+
 import java.util.*;
 
 public class Venda {
@@ -36,7 +41,7 @@ ArrayList<itemVenda>itemV;
             x.append(a.toString());
         }
 
-        return "Nome do Cliente: "+cli.getNome()+" Itens Comprados e quantidade: "+" "+x;
+        return "Nome do br.cadastro.dados.Cliente: "+cli.getNome()+" Itens Comprados e quantidade: "+" "+x;
 
         }
     }

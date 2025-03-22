@@ -1,3 +1,7 @@
+package br.cadastro.bancoD;
+
+import br.cadastro.dados.Produto;
+
 import java.util.ArrayList;
 public class CadProdutos {
 
