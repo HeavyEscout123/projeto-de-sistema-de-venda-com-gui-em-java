@@ -1,7 +1,11 @@
 package br.cadastro.dados;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Pessoa {
+@SerializedName("nome")
 private String nome;
+@SerializedName("cpf")
 private String cpf;
 
 public Pessoa(String nome, String cpf){
@@ -16,5 +20,12 @@ public Pessoa(String nome, String cpf){
 
     public String getCpf() {
         return cpf;
+    }
+
+    public String toString () {
+        return "Pessoa{" +
+                "nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                '}';
     }
 }

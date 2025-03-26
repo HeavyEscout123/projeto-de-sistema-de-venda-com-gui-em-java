@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CadClientes {
-
     private static ArrayList<Cliente> b = new ArrayList<>();
     private static final String ARQUIVO = "clientes.json";
 

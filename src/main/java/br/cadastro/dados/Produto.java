@@ -1,12 +1,23 @@
 package br.cadastro.dados;
 
+import com.google.gson.annotations.SerializedName;
+
+import java.util.Random;
+
 public class Produto {
+    @SerializedName("codigo")
     private final int codigo;
+
+    private static Random r = new Random ();
+
+    @SerializedName("nome")
     private String nome;
+
+    @SerializedName("preço")
     private double preco;
 
-public Produto(int codigo, String nome, double preco){
-        this.codigo = codigo;
+public Produto(String nome, double preco){
+        this.codigo = r.nextInt (101);
         this.nome = nome;
         this.preco = preco;
 
