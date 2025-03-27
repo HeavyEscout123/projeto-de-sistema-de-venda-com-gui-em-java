@@ -3,6 +3,8 @@ package br.cadastro;
 
 import br.cadastro.bancoD.CadClientes;
 import br.cadastro.bancoD.CadProdutos;
+import br.cadastro.bancoD.Venda;
+import br.cadastro.bancoD.itemVenda;
 import br.cadastro.dados.Cliente;
 import br.cadastro.dados.Pessoa;
 import br.cadastro.dados.Produto;
@@ -29,13 +31,14 @@ public class App {
 
 
         while (true) {
-            aux = JOptionPane.showInputDialog ("Menu:\n1 - Adicionar clientes\n2 - Mostrar Clientes Cadastrados\n3 - Adicionar Produtos\n4 - Mostrar" +
-                    "Cadastro de Produtos");
+            aux = JOptionPane.showInputDialog ("Menu:\n1 - Adicionar clientes\n|\n2 - Adicionar Produtos\n---------------------\n3 - Mostrar Clientes Cadastrados\n|\n4 - Mostrar" +
+                    "Cadastro de Produtos\n--------------------\n5 - Realizar uma Venda");
 
             aux2 = parseInt (aux);
             switch (aux2) {
                 case 1:
                     while (true) {
+                        CadClientes.carregar();
                         nome = JOptionPane.showInputDialog ("Nome do cliente");
                         if (nome.equals ("/")) {
                             JOptionPane.showMessageDialog (null, "Reiniciando");
@@ -56,12 +59,13 @@ public class App {
                         CadClientes.inserir (c);
                     }
                     break;
-                case 2:
+                case 3:
                     CadClientes.carregar ();
                     JOptionPane.showMessageDialog (null, CadClientes.cadastro ());
                     break;
-                case 3:
+                case 2:
                     while (true) {
+                        CadProdutos.carregar();
                         nome = JOptionPane.showInputDialog ("Nome do produto");
                         if (nome.equals ("/")) {
                             JOptionPane.showMessageDialog (null, "Reiniciando");
@@ -85,12 +89,41 @@ public class App {
                     break;
                 case 4:
                     CadProdutos.carregar();
-                    JOptionPane.showMessageDialog (null, CadProdutos.cadastro ());
+                    JOptionPane.showMessageDialog (null, CadProdutos.cadastro());
+                    break;
                 case 5:
-                    aux = JOptionPane.showInputDialog ("Quantidade do Produto");
-                    aux2 = parseInt(aux);
-                    aux = JOptionPane.showInputDialog ("Nome do Produto");
-
+                    CadClientes.carregar();
+                    itemVenda i = null;
+                    Venda v = null;
+                    String s = JOptionPane.showInputDialog ("Nome do Cliente");
+                    try {
+                       Cliente c = CadClientes.getCliente(s);
+                        v = new Venda(c);
+                    }catch(IllegalArgumentException e){
+                        JOptionPane.showMessageDialog(null,"Erro:"+e.getMessage()+" tente novamente");
+                        break;
+                    }
+                    while(!aux.equals(".")) {
+                        CadProdutos.carregar();
+                        aux = JOptionPane.showInputDialog("Quantidade do Produto");
+                        if(aux.equals(".")){
+                            break;
+                        }
+                        aux2 = parseInt(aux);
+                        aux = JOptionPane.showInputDialog("Nome do Produto");
+                        if(aux.equals(".")){
+                            break;
+                        }
+                        try {
+                            Produto p = CadProdutos.get(aux);
+                            i = new itemVenda(aux2, p);
+                        } catch (IllegalArgumentException e) {
+                            JOptionPane.showMessageDialog(null, "Erro:" + e.getMessage() + " tente novamente");
+                            break;
+                        }
+                        v.inserir(i);
+                    }
+                    JOptionPane.showMessageDialog (null, v.toString()+"\n Valor: "+v.valorTotal());
 
 
             }

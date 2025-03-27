@@ -37,6 +37,6 @@ public Produto(String nome, double preco){
 
 
     public String toString() {
-        return "Preco: "+preco+" Nome: "+nome+" Codigo: "+codigo;
+        return "Preco: "+preco+"\nNome: "+nome+"\nCodigo: "+codigo+"\n------\n";
     }
 }

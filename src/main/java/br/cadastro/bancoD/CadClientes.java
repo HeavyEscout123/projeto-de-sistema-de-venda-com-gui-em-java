@@ -1,6 +1,7 @@
 package br.cadastro.bancoD;
 
 import br.cadastro.dados.Cliente;
+import br.cadastro.dados.Produto;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.io.*;
@@ -15,6 +16,18 @@ public class CadClientes {
         b.add(a);
         salvar();
     }
+
+    public static Cliente getCliente(String nome){
+        for(Cliente p : b){
+            if(p.getNome().equals(nome)){
+                return p;
+            }
+        }
+        throw new IllegalArgumentException("Cliente não encontrado");
+
+
+    }
+
 
     public static String getNome(int codigo){
         for (Cliente b : b) {

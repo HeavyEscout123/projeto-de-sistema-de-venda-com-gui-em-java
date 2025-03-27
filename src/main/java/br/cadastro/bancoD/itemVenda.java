@@ -16,7 +16,7 @@ public class itemVenda {
     }
 
     public String toString(){
-        return prod.getNome()+" "+quantidade+" ";
+        return prod.getNome()+"|"+quantidade+" ";
     }
 
 }

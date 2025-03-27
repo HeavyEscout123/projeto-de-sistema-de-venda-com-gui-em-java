@@ -14,13 +14,14 @@ public class CadProdutos {
 
 
 
-    public static String get(int codigo){
+    public static Produto get(String nome){
         for (Produto b : a) {
-            if (codigo == b.getCodigo()) {
-                return b.getNome();
+            if (nome.equals(b.getNome())) {
+                return b;
             }
         }
-        return "br.cadastro.dados.Cliente não encontrado";
+        throw new IllegalArgumentException("Produto não encontrado");
+
     }
 
 
