@@ -1,2 +1,7 @@
 # VENDA COM GUI EM JAVA
-Sistema sem validação de entradas para venda e cadastro de produtos e usuários
+
+
+Objetivos: Sistema sem validação de entradas para venda e cadastro de produtos e usuários com interface gráfica e consistência de dados
+
+Tecnologias: Java, Maven
+
