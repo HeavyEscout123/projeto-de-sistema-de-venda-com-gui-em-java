@@ -5,12 +5,12 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.projeto</groupId> <!-- Substitua com o nome do seu projeto -->
-    <artifactId>projeto</artifactId> <!-- Nome do seu projeto -->
+    <groupId>com.projeto</groupId> 
+    <artifactId>projeto</artifactId> 
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
-        <!-- Dependência do Gson -->
+
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -22,9 +22,9 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>3.1.0</version> <!-- Certifique-se de usar a versão mais recente -->
+                <version>3.1.0</version> 
                 <configuration>
-                    <mainClass>br.cadastro.App</mainClass> <!-- Substitua com o caminho da sua classe App -->
+                    <mainClass>br.cadastro.App</mainClass> 
                 </configuration>
             </plugin>
         </plugins>
